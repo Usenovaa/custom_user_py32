@@ -36,3 +36,14 @@ class LoginView(ObtainAuthToken):
 
 #     def get(self, request):
 #         return Response('helloooooooo')
+    
+
+
+class LogoutView(APIView):
+
+    def delete(self, request):
+        user = request.user
+        print(dir(request))
+        print(request.user)
+
+        return Response('Вы успешно вышли из своего аккаунта')
